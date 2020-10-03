@@ -1,0 +1,30 @@
+:host {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+.li-container {
+    border: 1px solid gray;
+    padding: 5px 10px 0 10px;
+    max-width: 150px;
+    min-height: 25px;
+    list-style: none;
+    box-shadow: 2px 2px gray;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.icon-position {
+    float: right;
+    font-size: 20px;
+    color: gray;
+}

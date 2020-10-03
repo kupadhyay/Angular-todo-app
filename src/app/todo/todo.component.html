@@ -1,0 +1,32 @@
+<mat-card>
+    <!-- input box -->
+    <mat-card-title>Todo App</mat-card-title>
+    <mat-card-content>
+        <!-- <form class="example-form inline-block"> -->
+        <mat-form-field class="example-full-width inline-block">
+            <mat-label> Add item</mat-label>
+            <input matInput [(ngModel)]="todoItem" (keyup.enter)="addItem()" maxlength="256" placeholder="Ex. Add todo list item...">
+        </mat-form-field>
+        <!-- </form> -->
+        <span class="inline-block" (click)="addItem()">
+          <i class="material-icons">add_circle</i>
+          </span>
+        <mat-error *ngIf="nullValueFlag">
+            {{ nullValueMsg }}
+        </mat-error>
+        <mat-error *ngIf="duplicateValueFlag">
+            {{ duplicateValueMsg }}
+        </mat-error>
+    </mat-card-content>
+
+    <!-- list all item -->
+    <mat-card-content>
+        <ul>
+            <li class="li-container" *ngFor="let item of itemList">
+                <span class="vertical-align-middle">{{ item }}</span>
+                <i class="material-icons icon-position" (click)="deleteItem(item)">delete</i>
+                <i class="material-icons icon-position" (click)="editItem(item)">edit</i>
+            </li>
+        </ul>
+    </mat-card-content>
+</mat-card>
